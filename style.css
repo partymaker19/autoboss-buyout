@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@100;300;400;500;700&display=swap");
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+.top_bar {
+  position: relative;
+}
+
+.logo_text {
+  position: absolute;
+  left: 20px;
+  font-size: 42px;
+  color: white;
+  z-index: 1;
+}
+
+.navigation {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  z-index: 1;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 30px;
+}
+
+.navigation ul li {
+  font-size: 20px;
+  list-style-type: none;
+  color: white;
+}
+
+.nav_list :hover {
+  color: #91f1fd;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+}
+
+.image {
+  min-height: 780px;
+}
+
+.image img {
+  width: 100%;
+  height: 780px;
+  object-fit: cover;
+  filter: brightness(40%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 76%);
+  z-index: -1;
+}
+
+.form {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 455px;
+  padding: 20px 40px 60px 40px;
+  text-align: center;
+  background: #f2fbfd;
+  box-shadow: 8px 8px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 32px;
+  z-index: 1;
+}
+
+.form h2 {
+  margin-bottom: 23px;
+}
+
+.formInput {
+  width: 375px;
+  height: 55px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  margin-bottom: 25px;
+  padding-left: 22px;
+}
+
+.btn {
+  width: 255px;
+  height: 59px;
+  max-width: 100%;
+  background: #1c8eb5;
+  border-radius: 15px;
+  align-self: center;
+  color: white;
+  border: none;
+}
+
+.info_wrapper {
+  position: absolute;
+  right: 15%;
+  top: 22%;
+  width: 31em;
+  height: 31em;
+  background: rgba(205, 214, 219, 0.3);
+  border-radius: 50%;
+  padding: 1.4644em;
+  z-index: 1;
+}
+
+.info_buy {
+  padding: 150px 10px 0 50px;
+  font-size: 25px;
+  color: white;
+  font-weight: 700;
+}
+
+.info_buy span {
+  color: #91f1fd;
+}
+
+.contact_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.icon_cnt {
+  display: flex;
+  gap: 20px;
+}
+
+.cnt_number a {
+  text-decoration: none;
+  color: white;
+  font-size: 34px;
+}
+
+.cnt_number a:hover {
+  color: #91f1fd;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12%;
+  background-color: #f3f3f3;
+  padding-bottom: 5%;
+}
+
+.intro h1 {
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.tg_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tg {
+  background: #0088cc;
+  width: 165px;
+  color: #fff;
+  font-size: 19px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 20px;
+  line-height: 40px;
+  border: none;
+}
+
+.tg:hover {
+  background-color: #007bff;
+  transition: background-color 0.1s linear;
+}
+
+.car_buyback_section {
+  height: 300px;
+  background-color: #505050;
+  color: white;
+}
+
+.car_buyback_section h1 {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.car_buyback_wrapper {
+  display: grid;
+  justify-content: center;
+  padding-top: 2%;
+}
+
+.car_buyback {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  grid-row-gap: 10px;
+}
+
+.buyback {
+  width: 270px;
+}
+
+.buyback h4 {
+  color: #91f1fd;
+}
+
+.scheme_section {
+  background-color: #f3f3f3;
+  /* margin-top: 5%; */
+  padding-bottom: 5%;
+}
+
+.scheme_wrapper h1 {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.scheme {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.scheme_block {
+  padding: 10px;
+  width: 350px;
+  border: 2px solid black;
+}
+
+.scheme_section p {
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.arrow {
+  align-self: center;
+}
+
+.footer {
+  height: 200px;
+  background-color: #505050;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+}
+
+.footer_cnt a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer_cnt a:hover {
+  color: #91f1fd;
+}
+
+.autoboss a {
+  text-decoration: none;
+  color: white;
+}
+
+.autoboss a:hover {
+  color: #91f1fd;
+}
