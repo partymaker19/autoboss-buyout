@@ -205,7 +205,9 @@ h1 {
   opacity: 0;
   visibility: hidden;
   position: absolute;
+  width: 130px;
 }
+
 
 .field__file-wrapper {
   width: 100%;
@@ -652,8 +654,8 @@ h3 {
   }
 
   .form {
-    left: 2%;
-    width: 350px;
+    left: 3%;
+    width: 340px;
     transition: 0.2s;
 
   }
@@ -733,16 +735,24 @@ h3 {
     flex-wrap: wrap;
   }
 
+  .navigation a {
+    font-size: 22px;
+    line-height: 38px;
+  }
+
   .footer {
     font-size: 14px;
   }
 }
 
+@media (max-width: 450px) {
+  .intro {
+    margin-top: 115%;
+  }
+}
 
 @media (max-width: 320px) {
   .logo_text {
     font-size: 18px;
   }
-
-  .info_wrapper {}
 }
