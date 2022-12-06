@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/files/avtoicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="normalize.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>autoboss-buyout</title>
   </head>
   <body>
@@ -19,13 +19,24 @@
       </h1>
       <nav class="navigation">
         <ul class="nav_list">
-          <li><a href="#part1">Выкуп авто</a></li>
-          <li><a href="#part2">Как мы работаем</a></li>
-          <li>
+          <li class="list_item"><a href="#part1">Выкуп авто</a></li>
+          <li class="list_item"><a href="#part2">Как мы работаем</a></li>
+          <li class="list_item">
             <a title="+375333966633" href="tel:+375333966633">+375333966633</a>
           </li>
         </ul>
+        <div class="header_nav_close">
+          <span class="header_nav_close_line"></span>
+          <span class="header_nav_close_line"></span>
+        </div>
       </nav>
+      <div class="burger_wrapper">
+        <div class="header_burger burger">
+          <span class="burger_line burger_line_first"></span>
+          <span class="burger_line burger_line_second"></span>
+          <span class="burger_line burger_line_third"></span>
+        </div>
+      </div>
       <form class="form" action="">
         <h2>Отправьте заявку на оценку стоимости авто</h2>
         <input class="formInput" type="text" placeholder="Ваше Имя" />
@@ -42,8 +53,23 @@
         />
         <input class="formInput" type="email" placeholder="Email" />
         <input class="formInput" type="number" placeholder="Ваш Телефон" />
+        <div class="field__wrapper">
+          <input
+            name="file"
+            type="file"
+            name="file"
+            id="field__file-2"
+            class="field field__file"
+            multiple
+          />
+          <label class="field__file-wrapper" for="field__file-2">
+            <div class="field__file-fake">Файл не выбран</div>
+            <div class="field__file-button">Выбрать</div>
+          </label>
+        </div>
         <button class="btn">
-          <span class="conteiner">Отправить заявку</span>
+          <span class="container"></span>
+          <span class="text">Отправить заявку</span>
         </button>
       </form>
       <div class="info_wrapper">
@@ -170,6 +196,57 @@
           </div>
         </div>
       </section>
+      <section class="map">
+        <h1>Выкуп автомобиля в вашем городе</h1>
+        <h3>
+          Мы выкупаем и выезжаем во все города Беларуси. Осмотр авто возможен в
+          перечисленных городах ниже.
+        </h3>
+        <div class="map_city">
+          <div class="belmap">
+            <img src="files/map.png" alt="map" />
+          </div>
+          <div class="city">
+            <ul>
+              <li><b>Минск</b></li>
+              <li>Молодечно</li>
+              <li>Слуцк</li>
+              <li>Борисов</li>
+              <li>Солигорск</li>
+              <li>Жодино</li>
+            </ul>
+            <ul>
+              <li><b>Брест</b></li>
+              <li>Барановичи</li>
+              <li>Пинск</li>
+              <li>Кобрин</li>
+            </ul>
+            <ul>
+              <li><b>Витебск</b></li>
+              <li>Полоцк</li>
+              <li>Новополоцк</li>
+              <li>Орша</li>
+            </ul>
+            <ul>
+              <li><b>Гродно</b></li>
+              <li>Лида</li>
+              <li>Слоним</li>
+              <li>Волковыск</li>
+            </ul>
+            <ul>
+              <li><b>Гомель</b></li>
+              <li>Жлобин</li>
+              <li>Мозырь</li>
+              <li>Светлогорск</li>
+              <li>Речица</li>
+            </ul>
+            <ul>
+              <li><b>Могилев</b></li>
+              <li>Бобруйск</li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
     <footer class="footer">
       <div class="autoboss"><a href="index.html">AUTOBOSS-BUYOUT</a></div>
@@ -178,5 +255,6 @@
         <a title="+375333966633" href="tel:+375333966633">+375333966633</a>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

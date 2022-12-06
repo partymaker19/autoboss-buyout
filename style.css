@@ -2,7 +2,9 @@
 
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
 *,
 *::before,
 *::after {
@@ -15,6 +17,7 @@ html {
 }
 
 body {
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-family: "Roboto", sans-serif;
 }
@@ -53,6 +56,11 @@ h1 {
   color: white;
 }
 
+.nav_list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .nav_list :hover {
   color: #91f1fd;
 }
@@ -60,6 +68,42 @@ h1 {
 .navigation a {
   text-decoration: none;
   color: white;
+}
+
+.burger_wrapper {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+.header_burger {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 28px;
+  z-index: 1;
+}
+
+.burger_line {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+}
+
+.burger_line_first {
+  top: 0;
+}
+
+.burger_line_second {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger_line_third {
+  bottom: 0;
 }
 
 .image {
@@ -72,17 +116,14 @@ h1 {
   object-fit: cover;
   filter: brightness(40%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 76%);
-  z-index: -1;
 }
 
 .form {
   position: absolute;
   top: 30%;
   left: 10%;
-  display: flex;
-  flex-direction: column;
   width: 455px;
-  padding: 20px 40px 60px 40px;
+  padding: 20px 40px 20px 40px;
   text-align: center;
   background: #f2fbfd;
   box-shadow: 8px 8px 4px 2px rgba(0, 0, 0, 0.25);
@@ -113,6 +154,107 @@ h1 {
   align-self: center;
   color: white;
   border: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.container {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.circle {
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  animation: scaleUp 1s forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(25);
+  }
+}
+
+.field__wrapper {
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.field__file {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.field__file-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.field__file-fake {
+  height: 55px;
+  width: calc(100% - 130px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 15px;
+  border: 1px solid #c7c7c7;
+  border-radius: 3px 0 0 3px;
+  border-right: none;
+}
+
+.field__file-button {
+  width: 130px;
+  height: 55px;
+  background: #1bbc9b;
+  color: #fff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
 }
 
 .info_wrapper {
@@ -164,7 +306,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 12%;
+  margin-top: 14%;
   background-color: #f3f3f3;
   padding-bottom: 5%;
 }
@@ -191,6 +333,7 @@ h1 {
   border-radius: 20px;
   line-height: 40px;
   border: none;
+  cursor: pointer;
 }
 
 .tg:hover {
@@ -199,7 +342,6 @@ h1 {
 }
 
 .car_buyback_section {
-  height: 300px;
   background-color: #505050;
   color: white;
 }
@@ -210,9 +352,8 @@ h1 {
 }
 
 .car_buyback_wrapper {
-  display: grid;
-  justify-content: center;
   padding-top: 2%;
+  padding-bottom: 5%;
 }
 
 .car_buyback {
@@ -224,7 +365,7 @@ h1 {
 }
 
 .buyback {
-  width: 270px;
+  width: 250px;
 }
 
 .buyback h4 {
@@ -264,6 +405,39 @@ h1 {
   align-self: center;
 }
 
+.map h1,
+h3 {
+  text-align: center;
+}
+
+.map h1 {
+  padding-top: 2%;
+}
+
+.map h3 {
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.map_city {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding-bottom: 2%;
+}
+
+
+.city {
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.city li::marker {
+  color: #91f1fd;
+}
+
 .footer {
   height: 200px;
   background-color: #505050;
@@ -276,6 +450,7 @@ h1 {
 .footer_cnt a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .footer_cnt a:hover {
@@ -285,8 +460,289 @@ h1 {
 .autoboss a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .autoboss a:hover {
   color: #91f1fd;
+}
+
+@media (max-width: 1350px) {
+  .info_wrapper {
+    right: 1%;
+    transition: 0.2s;
+  }
+
+  .form {
+    top: 25%;
+    transition: 0.2s;
+  }
+
+  .intro {
+    margin-top: 16%;
+    transition: 0.2s;
+  }
+
+  .scheme {
+    padding: 0 15px;
+  }
+
+  .car_buyback {
+    padding-left: 15px;
+  }
+}
+
+@media (max-width: 1099px) {
+  .logo_text {
+    top: 2%;
+    font-size: 35px;
+  }
+
+  .navigation ul li {
+    font-size: 15px;
+  }
+
+  .info_wrapper {
+    width: 25em;
+    height: 25em;
+  }
+
+  .info_buy {
+    padding-top: 100px;
+    font-size: 18px;
+  }
+
+  .cnt_number a {
+    font-size: 27px;
+  }
+
+  .form {
+    width: 400px;
+    transition: 0.2s;
+
+  }
+
+  .formInput {
+    width: 325px;
+    transition: 0.2s;
+  }
+
+  .scheme_section p {
+    font-size: 17px;
+  }
+
+  .buyback {
+    width: 220px;
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 999px) {
+  .header_burger {
+    display: block;
+  }
+
+  .navigation {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 10;
+    padding: 75px;
+    transform: translateX(100%);
+    transition: .2s all linear;
+    opacity: 0.9;
+  }
+
+  .header_nav_active {
+    transform: translateX(0);
+  }
+
+  .list_item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .list_item:last-child {
+    margin-bottom: 0;
+  }
+
+  .navigation a {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .header_nav_close {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 11;
+  }
+
+  .header_nav_close_line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+  }
+
+  .header_nav_close_line:first-child {
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  .header_nav_close_line:last-child {
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  .form {
+    top: 70%;
+  }
+
+  .info_wrapper {
+    top: 15%;
+  }
+
+  .intro {
+    margin-top: 75%;
+  }
+
+
+  .car_buyback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scheme {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .map_city {
+    flex-direction: column;
+  }
+
+  .arrow img {
+    display: none;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .logo_text {
+    font-size: 22px;
+  }
+
+  .form {
+    left: 2%;
+    width: 350px;
+    transition: 0.2s;
+
+  }
+
+
+  .info_wrapper {
+    width: 20em;
+    height: 20em;
+  }
+
+  .info_buy {
+    padding-top: 50px;
+    font-size: 18px;
+  }
+
+  .icon_cnt img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .formInput {
+    width: 225px;
+    height: 45px;
+    transition: 0.2s;
+  }
+
+  .btn {
+    width: 225px;
+    height: 45px;
+  }
+
+  .field__file-fake {
+    height: 45px;
+  }
+
+  .field__file-button {
+    height: 45px;
+  }
+
+  .intro {
+    margin-top: 95%;
+  }
+
+  .intro h1 {
+    font-size: 20px;
+  }
+
+  .belmap img {
+    width: 320px;
+    height: 270px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .car_buyback_wrapper h1 {
+    padding-bottom: 20px;
+  }
+
+  .scheme_block {
+    width: 320px;
+  }
+
+  .map h3 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .map_city {
+    gap: 10px;
+  }
+
+  .city {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 320px) {
+  .logo_text {
+    font-size: 18px;
+  }
+
+  .info_wrapper {}
 }
