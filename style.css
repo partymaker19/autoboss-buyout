@@ -469,6 +469,32 @@ h3 {
   color: #91f1fd;
 }
 
+.buy__info {
+  background-color: #f3f3f3;
+}
+
+.buy__info-block {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.buy__title {
+  font-size: 20px;
+}
+
+.buy__info-block ul {
+  margin-top: 10px;
+}
+
+.buy__info-block * {
+  margin-bottom: 20px;
+}
+
+.buy__info-block h2 {
+  text-align: center;
+}
+
 @media (max-width: 1350px) {
   .info_wrapper {
     right: 1%;
